@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	
+<meta charset="UTF-8">
+<title></title>
+<link href="./css/bootstrap.min.css" rel="stylesheet"> 
+<!-- MetisMenu CSS --> 
+<link href="./css/metisMenu.min.css" rel="stylesheet"> 
+<!-- Custom CSS --> 
+<link href="./css/sb-admin-2.css" rel="stylesheet"> 
+<!-- Custom Fonts --> 
+<link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+<link href="./css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"> 
+<link href="./css/datetimepicker_blue.css" rel="stylesheet" type="text/css"> 
+<link href="./css/dropdown.css" rel="stylesheet" type="text/css"> 
+<link rel="stylesheet" type="text/css" href="./css/common-x.css">
+<style>
+.modal-dialog{z-index: 2048;}
+#bglist li{list-style:none; float:left;margin:5px;}
+#bglist li img{height:200px;}
+.i-top{height:32px;}
+.i-body{top:32px;height: 100%;}
+.i-top,.i-body-wallet{background-color:#fff}
+.iphone{background-color:#f5f5f9}
+
+.i-nav-pay-detail{border:none;}
+.i-w-pay-money{font-weight:bold;}
+.i-w-wa-money{
+      margin-top: 189px;
+    margin-left: 19px;
+  text-align:left;
+}
+.i-b-a-m-data{
+    padding-right: 0px;
+}
+.i-w-wa-money span{
+  font-size: 116px;
+  color:#000;
+  background:none;
+}
+.i-b-a-money span.i-b-a-mines {
+     top: -19px;
+    left: -23px;
+    font-size: 74px;
+}
+.i-b-a-money .i-b-a-m-data-min span.i-b-a-plus{
+top: -12px;
+}
+
+.i-b-a-money .i-b-a-m-data-min span.i-b-a-mines{
+  top: -27px;
+}
+.i-b-a-money {
+    top: 100px;
+    font-size: 65px;
+  }
+.i-b-a-pay-type{
+    width: 684px;
+    left: 89px;
+    text-align: right;
+    top: 304px;
+    font-size: 30px;
+}
+ 
+.i-b-a-username{
+    text-align: right;
+    width: 536px;
+    left: 0px;
+    top: 32px;
+    font-weight: 400;
+    font-size: 33px;
+}
+.i-b-a-face{
+
+  position:static;
+    overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    width: 50px;
+    display: inline-block;
+    margin-right: 17px;
+    border-radius: 25px; 
+}
+
+
+
+
+
+
+.iphone{
+  width: 828px;
+  height: 1792px;
+}
+.i-body{top:177px; bottom:180px;}
+.i-top{
+  background:none;/*url(/static./images/iphonex/wexin-x-top.png) top left;*/
+  height:177px;
+  padding-top: 28px;
+}
+.i-nav{border:none; top:20px; }
+.i-n-back{
+  background:none;
+}
+.i-n-count{
+  top:20px;
+}
+.i-top-elm{margin-right:0px;}
+
+
+
+.i-top-time{
+  position: static;
+    margin-left: 0px;
+    color: #000;
+    line-height: 43px;
+    text-align: right;
+        font-size: 34px;
+  font-weight: bold;
+}
+
+.i-top-berry, .i-top-berry2{
+    width: 53px;
+  height:25px;
+    background: url(./images/iphonex/dc.png) no-repeat;
+   margin-top: 9px;
+    margin-right: 34px;
+}
+.i-top-berry i {
+    position: absolute;
+    height: 21px;
+    width: 44px;
+    bottom: 2px;
+    left: 1px;
+    padding: 2px;
+    padding-left: 3px;
+}
+
+.i-signal {
+  width:38px;
+  height:25px;
+  background:url(./images/iphonex/signal3.png) no-repeat;
+  margin-top:9px;
+  margin-right:10px;
+}
+
+.i-signal1 {
+  background:url(./images/iphonex/signal1.png) no-repeat;
+}
+.i-signal2 {
+  background:url(./images/iphonex/signal2.png) no-repeat;
+}
+.i-signal3 {
+  background:url(./images/iphonex/signal3.png) no-repeat;
+}
+.i-signal4 {
+  background:url(./images/iphonex/signal4.png) no-repeat;
+}
+.i-signal5{
+  background:url(./images/iphonex/signal4.png) no-repeat;
+}
+
+.i-carrier {
+  width:92px;
+  height:23px;
+  background:url(./images/iphone/cnyd.png) no-repeat;
+  margin-top:10px;
+  margin-left:12px;
+}
+.i-c-yd {
+  background:url(./images/iphone/cnyd.png) no-repeat;
+}
+.i-c-lt {
+  background:url(./images/iphone/cnlt.png) no-repeat;
+}
+.i-c-dx {
+  background:url(./images/iphone/cndx.png) no-repeat;
+}
+
+
+.i-network {
+  width:33px;
+  height:24px;
+  background:url(./images/iphone/wifi.png) no-repeat;
+  margin-top: 9px;
+    margin-right: 12px;
+}
+.i-n-wifi {
+  background:url(./images/iphonex/wifi.png) no-repeat;
+}
+.i-n-4g {
+  background:url(./images/iphonex/4g.png) no-repeat;
+}
+.i-n-5g {
+  background:url(./images/iphonex/5g.png) no-repeat;
+}
+
+
+.i-b-rec-text, .i-b-sen-text{
+       margin: 26px 25px 0 25px;
+}
+.i-b-rec-text div span{
+  background:#fff;
+    margin-left: 18px;
+}
+.i-b-sen-text div span{
+  background:#95ec69;
+   margin-left: 0;
+    margin-right: 25px;
+}
+.i-bottom-wechat{
+   height: 180px;
+       z-index: 100;
+  background:url(./images/iphonex/wexin-x-bottom.png) no-repeat;
+}
+
+.i-b-a-liyou2{
+     top: 759px;
+    color: #aaa;
+}
+.i-b-a-time{
+    top: 559px;
+}
+.i-b-a-trade{
+    top: 634px;
+}
+
+ .iphone{background-image:url(./images/alipay/alizd-skn.png);}
+.iphone2{background-image:url(./images/alipay/alizd-sk1.png);}
+
+
+
+
+</style>
+</head>
+<body>
+</body>
+</html>
