@@ -779,9 +779,9 @@ top: -12px;
 	            var myImage = canvas.toDataURL("image/png");  
 	            var pop_pic = $('.pop-pic');
 	            var pop_class = 'pc';
-	            if(browser.versions.mobile){
-	            	pop_class = 'mobile';
-	            }
+	            // if(browser.versions.mobile){
+	            // 	pop_class = 'mobile';
+	            // }
 	            pop_pic.find('.tips').addClass(pop_class);
 	            pop_pic.find('img').attr('src',myImage);
 	            pop_pic.show();
