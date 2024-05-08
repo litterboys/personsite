@@ -1,0 +1,806 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>在线支付宝商品付款账单生成器 - iPhoneXR版</title> 
+  <meta charset="utf-8">
+  <meta name="keywords" content="iPhoneXR截图生成,微信对话生成器,红包聊天,支付宝转帐截图,微信聊天在线生成器,微信对话生成器在线,微信对话在线制作,微信截图生成器,微信对话框生成器"> 
+  <meta name="description" content="iPhoneXR截图在线制作支付宝转帐账单截图，可自定义转账方式、金额、日期等，装逼利器"> 
+  <meta name="renderer" content="webkit"> 
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"> 
+  <meta content="telephone=no, address=no" name="format-detection"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> 
+  <!-- Bootstrap Core CSS --> 
+  <link href="css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- MetisMenu CSS --> 
+  <link href="css/metisMenu.min.css" rel="stylesheet"> 
+  <!-- Custom CSS --> 
+  <link href="css/sb-admin-2.css" rel="stylesheet"> 
+  <!-- Custom Fonts --> 
+  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+  <link href="css/jquery.datetimepicker.css" rel="stylesheet" type="text/css"> 
+  <link href="css/datetimepicker_blue.css" rel="stylesheet" type="text/css"> 
+  <link href="css/dropdown.css" rel="stylesheet" type="text/css"> 
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// --> 
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]--> 
+  <!-- jQuery --> 
+  <script src="js/jquery-1.10.2.min.js"></script> 
+  <script>
+	var is_check_brower = false;
+	var is_mobile = '';
+	var image_type = 0;
+</script> 
+  <!-- Bootstrap Core JavaScript --> 
+  <script src="js/bootstrap.min.js"></script> 
+  <!-- Metis Menu Plugin JavaScript --> 
+  <script src="js/metisMenu.min.js"></script> 
+  <!-- Custom Theme JavaScript --> 
+  <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script> 
+  <script type="text/javascript" src="js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script> 
+  <script src="js/jquery.sglide.js"></script> 
+  <script src="js/sb-admin-2.js"></script> 
+  <script type="text/javascript" src="js/html2canvas.min.js"></script> 
+  <script type="text/javascript" src="js/emoji.js"></script> 
+  <script type="text/javascript" src="js/functions.js"></script> 
+  <script>
+	$(function(){
+		$('#btn-menu').click(function(){
+			$('.sidebar-nav').toggle();
+		});
+	});
+</script> 
+  <style>
+.modal-dialog{z-index: 2048;}
+#bglist li{list-style:none; float:left;margin:5px;}
+#bglist li img{height:200px;}
+</style> 
+  <link rel="stylesheet" type="text/css" href="css/common-x.css"> 
+  <script type="text/javascript" src="js/common-2019alipay.js"></script> 
+  <style>
+.modal-dialog{z-index: 2048;}
+#bglist li{list-style:none; float:left;margin:5px;}
+#bglist li img{height:200px;}
+.i-top{height:32px;}
+.i-body{top:32px;height: 100%;}
+.i-top,.i-body-wallet{background-color:#fff}
+.iphone{background-color:#f5f5f9}
+
+.i-nav-pay-detail{border:none;}
+.i-w-pay-money{font-weight:bold;}
+.i-w-wa-money{
+      margin-top: 189px;
+    margin-left: 19px;
+  text-align:left;
+}
+.i-b-a-m-data{
+    padding-right: 0px;
+}
+.i-w-wa-money span{
+  font-size: 116px;
+  color:#000;
+  background:none;
+}
+
+.i-b-a-money .i-b-a-m-data-min span.i-b-a-plus{
+top: -12px;
+}
+
+.i-b-a-money span.i-b-a-mines {
+     top: -27px !important;
+    left: -23px;
+    font-size: 74px;
+}
+
+.i-b-a-money {
+    top: 262px;
+    font-size: 65px;
+  }
+.i-b-a-pay-type {
+    width: 530px;
+    left: 237px;
+    text-align: left;
+    top: 864px;
+    font-size: 30px;
+}
+.i-b-a-username{
+        text-align: center;
+    width: 100%;
+    left: 0px;
+    top: 64px;
+    font-weight: 400;
+    font-size: 33px;
+}
+.i-b-a-face{
+
+  position:static;
+    overflow: hidden;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    width: 50px;
+    display: inline-block;
+    margin-right: 17px;
+    border-radius: 25px; 
+}
+
+.i-b-a-liyou {
+    position: absolute;
+    top: 624px;
+    font-size: 30px;
+    left: 244px;
+    color: #323232;
+    width: 530px;
+    text-align: left;
+    word-break: break-all;
+}
+.i-b-a-liyou2 {
+    position: absolute;
+    font-size: 30px;
+    left: 245px;
+    color: #323232;
+    width: 500px;
+    text-align: left;
+    top: 500px;
+}
+.i-b-a-time {
+    position: absolute;
+    left: 244px;
+    top: 566px;
+    font-size: 30px;
+    color: #323232;
+    /* font-weight: bold; */
+}
+.i-b-a-trade {
+    position: absolute;
+    left: 236px;
+    top: 928px;
+    font-size: 30px;
+    color: #323232;
+    /* word-break: break-all; */
+    /* word-wrap: break-word; */
+    width: 530px;
+    text-align: left;
+}
+
+.i-b-a-trade2 {
+    position: absolute;
+    left: 234px;
+    top: 992px;
+    font-size: 30px;
+    color: #323232;
+    /* word-break: break-all; */
+    /* word-wrap: break-word; */
+    width: 530px;
+    text-align: left;
+}
+
+.i-b-a-type {
+  left: 240px;
+  top: 738px;
+  text-align: left;
+  font-size: 30px;
+
+}
+
+
+.i-b-a-pay-type3 {
+  position: absolute;
+  left: 240px;
+  top: 800px;
+  text-align: left;
+  font-size: 30px;
+  word-break: break-all;
+  width: 530px;
+}
+
+.i-b-a-username-title {
+  position: relative;
+  top: 30px;
+  font-size: 40px;
+}
+
+
+.iphone{
+  width: 828px;
+  height: 1792px;
+}
+.i-body{top:177px; bottom:180px;}
+.i-top{
+  background:none;/*url(/static./images/iphonex/wexin-x-top.png) top left;*/
+  height:177px;
+  padding-top: 28px;
+}
+.i-nav{border:none; top:20px; }
+.i-n-back{
+  background:none;
+}
+.i-n-count{
+  top:20px;
+}
+.i-top-elm{margin-right:0px;}
+
+
+
+.i-top-time{
+  position: static;
+    margin-left: 0px;
+    color: #000;
+    line-height: 43px;
+    text-align: right;
+    font-size: 34px;
+  font-weight: bold;
+}
+
+.i-top-berry, .i-top-berry2{
+    width: 53px;
+  height:25px;
+    background: url(./images/iphonex/dc.png) no-repeat;
+   margin-top: 9px;
+    margin-right: 34px;
+}
+.i-top-berry i {
+    position: absolute;
+    height: 21px;
+    width: 44px;
+    bottom: 2px;
+    left: 1px;
+    padding: 2px;
+    padding-left: 3px;
+}
+
+.i-signal {
+  width:38px;
+  height:25px;
+  background:url(./images/iphonex/signal3.png) no-repeat;
+  margin-top:9px;
+  margin-right:10px;
+}
+
+.i-signal1 {
+  background:url(./images/iphonex/signal1.png) no-repeat;
+}
+.i-signal2 {
+  background:url(./images/iphonex/signal2.png) no-repeat;
+}
+.i-signal3 {
+  background:url(./images/iphonex/signal3.png) no-repeat;
+}
+.i-signal4 {
+  background:url(./images/iphonex/signal4.png) no-repeat;
+}
+.i-signal5{
+  background:url(./images/iphonex/signal4.png) no-repeat;
+}
+
+.i-carrier {
+  width:92px;
+  height:23px;
+  background:url(./images/iphone/cnyd.png) no-repeat;
+  margin-top:10px;
+  margin-left:12px;
+}
+.i-c-yd {
+  background:url(./images/iphone/cnyd.png) no-repeat;
+}
+.i-c-lt {
+  background:url(./images/iphone/cnlt.png) no-repeat;
+}
+.i-c-dx {
+  background:url(./images/iphone/cndx.png) no-repeat;
+}
+
+
+.i-network {
+  width:33px;
+  height:24px;
+  background:url(./images/iphone/wifi.png) no-repeat;
+  margin-top: 9px;
+    margin-right: 12px;
+}
+.i-n-wifi {
+  background:url(./images/iphonex/wifi.png) no-repeat;
+}
+.i-n-4g {
+  background:url(./images/iphonex/4g.png) no-repeat;
+}
+.i-n-5g {
+  background:url(./images/iphonex/5g.png) no-repeat;
+}
+
+
+.i-b-rec-text, .i-b-sen-text{
+       margin: 26px 25px 0 25px;
+}
+.i-b-rec-text div span{
+  background:#fff;
+    margin-left: 18px;
+}
+.i-b-sen-text div span{
+  background:#95ec69;
+   margin-left: 0;
+    margin-right: 25px;
+}
+.i-bottom-wechat{
+   height: 180px;
+       z-index: 100;
+  background:url(./images/iphonex/wexin-x-bottom.png) no-repeat;
+}
+
+
+ .iphone{background-image:url(./images/alipay/tcly-bgcd2.jpg);}
+.iphone2{background-image:url(./images/alipay/alisjzd-bgbb.png);}
+
+
+</style>
+ 
+ </head> 
+ <body> 
+  <div id="wrapper"> 
+   <div class="_lvor0mffsap"></div>
+   <!-- Navigation --> 
+   <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #24db71;"> 
+    <!-- 头部 --> 
+    <div class="navbar-header"> 
+     <a href="javascript:window.location.href=window.location.origin" class="top-logo">博客首页</a> 
+     <a href="javascript:;" id="btn-menu">Menu</a> 
+    </div> 
+    
+    <div class="navbar-default sidebar" role="navigation"> 
+     <div class="sidebar-nav navbar-collapse collapse"> 
+      <ul class="nav" id="side-menu"> 
+       <li> <a href="index.html"><i class="fa fa-home fa-fw"></i> 工具首页</a> </li> 
+       <li><a href="message.html"><i class="fa fa-paperclip fa-fw"></i> 手机短信截图</a></li> 
+       <li> <a href="javascript:;"><i class="fa fa-wechat fa-fw"></i> 微信 - <span style="color:red">最新版</span><span class="fa arrow"></span></a> 
+        <ul class="nav nav-second-level"> 
+         <li> <a href="iphonex.html">对话生成-iPhoneXR</a> </li> 
+         <li> <a href="wx2019.html">对话生成-i6s</a> </li> 
+         <li> <a href="zzf.html">付款账单2019-付款人</a> </li> 
+         <li> <a href="zz.html">收款账单2019-收款人</a> </li> 
+         <li> <a href="wxzd.html">扫码付款2019账单</a> </li>  
+         <li> <a href="zzf2022.html">付款账单2022-付款人</a> </li> 
+         <li> <a href="zz2022.html">收款账单2022-收款人</a> </li> 
+         <li> <a href="wxzd2022.html">扫码付款2022账单</a> </li>  
+         <li> <a href="money.html">我的零钱 - iPhoneXR</a> </li> 
+         <!-- <li> <a href="./wxhb.html">红包页面</a> </li>  -->
+        </ul> 
+        <!-- /.nav-second-level --> </li> 
+       <li> <a href="javascript:;"><i class="fa fa-shield fa-fw"></i> 支付宝 - <span style="color:red">最新版</span><span class="fa arrow"></span></a> 
+        <ul class="nav nav-second-level"> 
+         <li> <a href="alipay_balance2019.html">余额装逼</a> </li> 
+         <li> <a href="alisjzd.html">商品付款-iPhoneXR</a> </li> 
+         <li> <a href="alizd.html">转账付款-iPhoneXR</a> </li> 
+         <li> <a href="alizdsk.html">转账收款-iPhoneXR</a> </li>  
+        </ul> 
+        <!-- /.nav-second-level --> </li> 
+        <li><a href="xieyi.html" style="color:red;"><i class="fa fa-paperclip fa-fw"></i> 用户协议</a></li> 
+      </ul> 
+     </div> 
+     <!-- /.sidebar-collapse --> 
+    </div> 
+    <!-- /.navbar-static-side --> 
+   </nav> 
+   <!-- 主体 --> 
+   <div id="page-wrapper" style="height:auto;min-height:auto;"> 
+    <div class="alert alert-warning" role="alert" style="color:red;">
+  声明：本站功能仅供娱乐，正式场合请勿使用，<b>严禁用于违法行为</b>，否则后果自负！
+  <br>友情提示：请使用【谷歌浏览器】操作，以便获得最好的操作体验。
+ </div> 
+ <div class="_yeyki9m6a7"></div>
+   </div> 
+   <!-- 主体 --> 
+   <div id="page-wrapper"> 
+    <div class="row"> 
+     <div class="col-lg-12"> 
+      <h3 class="page-header">【iPhoneXR】支付宝商品付款账单</h3> 
+     </div> 
+    </div> 
+    <div class="row" style="position:relative;padding: 0 15px;"> 
+     <div class="panel-body panel-wx-tab"> 
+      <!-- Nav tabs --> 
+      <ul class="nav nav-tabs"> 
+       <li><a href="#w1" data-toggle="tab">外观设置</a></li> 
+       <li class="active"><a href="#w2" data-toggle="tab">内容设置</a></li> 
+      </ul> 
+      <div class="tab-content"> 
+       <div class="tab-pane fade" id="w1"> 
+        <div class="setting"> 
+         <p> <span>信号强度：</span> <select class="slt-common" data-class="i-signal"> <option value="i-signal1">1格</option> <option value="i-signal2">2格</option> <option selected value="i-signal3">3格</option> <option value="i-signal4">4格</option> 
+           <!-- <option  value="i-signal5">5格</option> --> </select> </p> 
+         <!--       <p>
+              <span>运营商：</span>
+              <select class="slt-common" data-class="i-carrier">
+                <option value="i-c-yd">中国移动</option>
+                <option value="i-c-lt">中国联通</option>
+                <option value="i-c-dx">中国电信</option>
+              </select>
+            </p> --> 
+         <p> <span>网络信号：</span> <select class="slt-common" data-class="i-network"> <option value="">无</option> <option selected value="i-n-wifi">Wifi</option> 
+           <!--   <option value="i-n-g">G</option>
+                <option value="i-n-e">E</option>
+                <option value="i-n-3g">3G</option> --> <option value="i-n-4g">4G</option> <option value="i-n-5g">5G</option> </select> </p> 
+         <p> <span>手机时间：</span> <select class="slt-phone-time slt-p-shi" style="display:none;"> <option>-</option> <option>上午</option> <option>下午</option> </select> <select class="slt-phone-time slt-p-hour"> </select> : <select class="slt-phone-time slt-p-minite"> </select> </p> 
+         <!--  <p>
+              <span>锁定旋转：</span>
+              <label><input class="rd-common" data-class="i-top-dir" type="radio" name="top-dir" value="1" checked /> 显示</label>
+              <label><input class="rd-common" data-class="i-top-dir" type="radio" name="top-dir" value="0" /> 不显示</label>
+            </p> --> 
+         <div style="margin: 0 0 10px;margin-top: 20px;"> 
+          <span>电量：</span> 
+          <div class="slider_bar"></div> 
+         </div> 
+         <!--  <p>
+              <span>电池状态：</span>
+              <select class="slt-common" data-class="i-top-berry">
+                <option value="">正常</option>
+                <option value="i-top-berry2">充电中</option>
+              </select>
+            </p> --> 
+         <!-- <p>
+                <span>电池百分比：</span>
+                <label><input class="rd-common" data-class="i-top-berry-num" type="radio" name="i-top-berry-num" value="1" checked /> 显示</label>
+                <label><input class="rd-common" data-class="i-top-berry-num" type="radio" name="i-top-berry-num" value="0" /> 不显示</label>
+              </p>
+                   --> 
+        </div> 
+       </div> 
+       <div class="tab-pane fade in active" id="w2"> 
+        <div class="setting"> 
+         <div class="users"> 
+          <div class="add-user"> 
+           <div class="a-u-pic"> 
+            <div class="a-u-pic-show"> 
+             <input type="file" accept="image/*"> 
+            </div> 
+           </div> 
+           <div class="a-u-name"> 
+            <p> <span>用户名：</span> <input class="input-common input-username" data-class="i-b-a-username-com" type="text" value="同程旅行" style="width:200px;"> </p> 
+            <p> <input class="btn-rand-face" type="button" value="随机头像" data-class="i-b-a-face"></p> 
+           </div> 
+          </div> 
+         </div> 
+         <p> <span>类型：</span> <select class="slt-type"> <option value="1">转入</option> <option value="2" selected>转出</option> </select> </p> 
+         <p><span>处理状态：</span><label style="margin-right:15px;"><input name="toback-status" type="radio" value="1" checked>交易成功</label><label> <input name="toback-status" type="radio" value="0">处理中</label></p> 
+         <p><span>转入/转出金额：</span><input class="i-ali-pay-money-change" type="text" value="100.00"></p> 
+         <p> <span>当前状态：</span> <input type="text" value="支付成功" data-class="i-b-a-liyou2" class="input-common"> </p> 
+         <p> <span>支付时间：</span> <input type="text" value="" data-class="i-b-a-time" class="input-common datepicker"> </p> 
+         <p> <span>商品：</span> <input style="width:280px;" type="text" value="同程旅行酒店(酒店订单ID：100005294919)" data-class="i-b-a-liyou" class="input-common"> </p> 
+         <p> <span>商户全称：</span> <input style="width:280px;" type="text" value="艺龙网信息技术（北京）有限公司" data-class="i-b-a-type" class="input-common"> </p> 
+         <p> <span>收单机构：</span> <input style="width:280px;" type="text" value="财付通支付科技有限公司" data-class="i-b-a-pay-type3" class="input-common input-agent"></p> 
+         <p> <span>支付方式：</span> <input type="text" value="零钱" data-class="i-b-a-pay-type" class="input-common"> </p> 
+         <p> <span>交易单号：</span> <input style="width:280px;" type="text" value="" data-class="i-b-a-trade" class="input-common input-trade"> <input id="btn-trade" type="button" value="随机生成"> </p> 
+         <p> <span>商户单号：</span> <input style="width:280px;" type="text" value="" data-class="i-b-a-trade2" class="input-common input-trade2"> <input id="btn-trade2" type="button" value="随机生成"> </p> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="my-btns"> 
+      <div class="loading">
+       正在生成，请稍候......
+      </div> 
+      <input class="btn btn-primary" type="button" value="生成图片" style="width:200px;" id="save"> 
+     </div> 
+     <div class="phone-wrap"> 
+      <div id="iphone" class="iphone"> 
+       <div class="i-top i-top-alipay"> 
+        <!--  <div class="i-top-elm i-signal"></div>
+        <div class="i-top-elm i-carrier i-c-yd"></div>
+        <div class="i-top-elm i-network i-n-wifi"></div>
+        <div class="i-top-elm i-top-time">00:00</div>
+        <div class="i-top-elm-r i-top-berry"><i><em></em></i></div>
+        <div class="i-top-elm-r i-top-berry-num">50%</div>
+        <div class="i-top-elm-r i-top-dir"></div>
+		--> 
+        <div class="i-top-elm i-top-time">
+         00:00
+        </div> 
+        <div class="i-top-elm-r i-top-berry">
+         <i><em></em></i>
+        </div> 
+        <div class="i-top-elm-r i-network i-n-wifi"></div> 
+        <div class="i-top-elm-r i-signal"></div> 
+        <div class="i-nav i-nav-alipay"> 
+        </div> 
+       </div> 
+       <div class="i-body i-body-alipay" style="background-size: 100% ; background-repeat: no-repeat; background-position: top;"> 
+        <!-- <div class="i-b-a-face"><img src="/static./images/face/10004.jpg" style="width:50px"/></div>  -->
+        <div class="i-b-a-username ">
+         <img src="../screenshots/images/face/10053.jpg" style="width:100px;height: 100px;border-radius: 50%;" class="i-b-a-face">
+         <div class="i-b-a-username-com i-b-a-username-title">同程旅行</div>
+        </div> 
+        <!-- <div class="i-b-a-username i-b-a-username-com">德云(*德云)</div>  -->
+        	<div class="i-b-a-img_box"></div> 
+        <div class="i-b-a-money"> 
+         <div class="i-b-a-m-data"> 
+          <span class="i-b-a-plus i-b-a-mines">-</span> 
+          <em>100.00</em> 
+         </div> 
+        </div> 
+        <div class="i-b-a-username-box"> 
+         <!-- <span class="i-b-a-email">abc***@qq.com</span>  -->
+         <!-- <span class="i-b-a-username2 i-b-a-username-com">德云(*德云)</span>  -->
+         <div style="clear:both;"></div> 
+        </div> 
+        <div class="i-b-a-liyou2">
+         支付成功
+        </div> 
+        <div class="i-b-a-time"></div> 
+        <div class="i-b-a-liyou">
+          同程旅行酒店(酒店订单ID：100005294919)
+        </div> 
+        <div class="i-b-a-type">
+          艺龙网信息技术（北京）有限公司
+        </div> 
+        <div class="i-b-a-pay-type3">财付通支付科技有限公司</div>
+        <div class="i-b-a-pay-type">
+         零钱
+        </div> 
+        <div class="i-b-a-trade"></div> 
+        <div class="i-b-a-trade2"></div> 
+       </div> 
+       <!--div class="i-bottom i-bottom-alipay"></div--> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="emojiPanel" id="emojiPanel"> 
+     <ul class="faceTab"> 
+      <li><a class="chooseFaceTab" href="javascript:;">QQ表情</a></li> 
+      <!--<li><a href="javascript:;">符号表情</a></li>
+      <li><a href="javascript:;">动画表情</a></li>--> 
+     </ul> 
+     <div class="faceWrap" style="zoom:1;outline:none;"> 
+      <div class="faceBox emojiArea"></div> 
+     </div> 
+    </div> 
+   </div> 
+   <!-- /主体 --> 
+  </div> 
+  <div class="pop-pic"> 
+   <img src="alisjzd.html" style="width:500px;margin-top:85px;"> 
+   <div class="tips"> 
+    <p class="tips-mobile">长按图片三秒,保存到手机</p> 
+    <p class="tips-pc">请将鼠标移动到上面图片上，然后点击鼠标右键，选择保存图片</p> 
+    <a>返回继续修改</a> 
+   </div> 
+  </div> 
+  <!-- 底部 --> 
+  <iframe id="ifm" frameborder="0" class="hide_ifm" src="../screenshots/images/iphonex/alisjzd_iframe.html"></iframe> 
+  <script type="text/javascript">
+
+    $('body').on('change','.a-u-pic-show input',function() { 
+      var img = document.createElement('img');//创建 img 对象
+      var _this = $(this);
+  
+      window.URL = window.URL || window.webkitURL;
+
+      var imgFile = $(this).get(0);
+      if(window.URL && imgFile.files[0]){
+        var reader = new FileReader(); 
+        reader.readAsDataURL(imgFile.files[0]); 
+        reader.onload = function(e){ 
+          var img = '<img src="'+this.result+'" alt=""/>'; 
+          _this.parent().find('img').remove();
+          _this.parent().append(img);
+          $('.i-b-a-face').attr('src', this.result);
+        } 
+      }
+    });
+
+    $('.datepicker').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true,
+        //startDate:(new Date()),
+        pickerPosition:'top-right'
+    }).on('changeDate', function(ev){
+      var _this = $(this);
+      _this.keyup();
+    });
+
+    var time = (new Date()).format("yyyy-MM-dd hh:mm:ss");
+    $('.datepicker').val(time);
+    $('.i-b-a-time').text(time);
+
+    //交易号
+    function set_trade(){
+      // var rand = randomString(11);
+      // var head = (new Date()).format("yyyy-MM-dd hh:mm:ss").split(' ')[0].replace('-','').replace('-','');
+      // var num = head + '00000000' + rand;
+      var num = generateRandomCode(21)
+      $('.i-b-a-trade').text(num);     
+      $('.input-trade').val(num); 
+    }
+    function generateRandomCode() {
+      const prefix = '420000';
+      let randomCode = prefix;
+
+      // 生成22位随机数字
+      for (let i = 0; i < 22; i++) {
+          randomCode += Math.floor(Math.random() * 10);
+      }
+
+      return randomCode;
+    }
+    set_trade();
+    $('#btn-trade').click(function(){
+      set_trade();
+    });
+
+
+    function set_trade2(){
+      // var rand = randomString(10);
+      // var head = (new Date()).format("yyyy-MM-dd hh:mm").split(' ')[0].replace('-','').replace('-','');
+      // var num = head + '1' +rand;
+      var num = generateRandomCode2(21)
+      $('.i-b-a-trade2').text(num);     
+      $('.input-trade2').val(num); 
+    }
+
+    function generateRandomCode2() {
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      let randomCode = '';
+
+      // 生成前三位大写字母
+      for (let i = 0; i < 3; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          randomCode += characters[randomIndex];
+      }
+
+      // 生成4到6位数字
+      for (let i = 0; i < 4 + Math.floor(Math.random() * 3); i++) {
+          randomCode += Math.floor(Math.random() * 10);
+      }
+
+      // 生成剩下的随机数
+      for (let i = 0; i < 14; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          randomCode += characters[randomIndex];
+      }
+
+      return randomCode;
+    }
+
+    set_trade2();
+    $('#btn-trade2').click(function(){
+      set_trade2();
+    });
+
+
+    //类型
+    $('.slt-type').change(function(){
+      var type = $(this).find('option:selected').val();
+      switch(type){
+        case '1':{
+          $('.i-b-a-plus').text('+').removeClass('i-b-a-mines');
+        
+          
+        }break;
+        case '2':{
+          $('.i-b-a-plus').text('-').addClass('i-b-a-mines');
+         
+        
+        }break;
+      }
+    });
+
+    $('.i-ali-pay-money-change').bind('input propertychange', function() {
+      var value = $(this).val();
+      if(!value || isNaN(value)){
+        return false;
+      }
+      if(isNaN(value)){
+        return false;
+      }
+      if(value > 9999){
+        $('.i-b-a-m-data').addClass('i-b-a-m-data-min');
+      }else{
+        $('.i-b-a-m-data').removeClass('i-b-a-m-data-min');
+      }
+      value = parseFloat(value).formatMoney(2,'');
+      $('.i-b-a-m-data em').text(value);
+    });
+
+    //随机生成邮箱
+    function set_email(){
+        var head = randomString(3,true);
+        var foot = ['qq.com','163.com','yeah.net','sina.com','126.com','vip.sina.com','sina.cn','hotmail.com','gmail.com','sohu.com','139.com','wo.com.cn','189.com','21cn.com'];
+        var rand_num = get_random_num(0,14);
+        var email = head + '***' + '@' + foot[rand_num];
+        $('.input-email').val(email);
+        $('.i-b-a-email').text(email); //$(".input-username").val() + "  " + 
+    }
+    set_email();
+    $('#rand_email').click(function(){
+      set_email();
+    });
+
+    $(".input-agent").change(function(){
+      var value = this.value
+      $(".i-b-a-pay-type3").val(value)
+    })
+
+    setTimeout(function(){
+      $('.btn-rand-face').click();
+    },500);
+    
+  </script> 
+  <script>
+	$(function(){
+
+		$("input[name='toback-status']").click(function(){
+			var _val = $(this).val();
+			
+			if(_val ==1){
+	
+				$(".iphone").removeClass("iphone2");
+			}else{
+				
+				$(".iphone").addClass("iphone2");
+			}
+			$("#money3").change();
+
+		});
+
+		$('.pop-pic .tips a').click(function(){
+			$('.pop-pic').hide();
+			$('#wrapper').show();
+		});
+
+		$('#save').click(function(){
+	      var _this = $(this);
+	      var div = $('#iphone').clone();
+	      var my_image = $('.my-image');
+	      var mask = $('.mask');
+	      if(!my_image.length){
+	        my_image = $('<div class="my-image">成功生成图片，点击 <a class="my-image-view" target="_blank" href="#">这里</a> 查看，<a class="my-image-continue" href="#">继续制作</a></div>');
+	        $('body').append(my_image);
+	      }
+	      if(!mask.length){
+	        $('body').append('<div class="mask"></div>');
+	      }
+	      div.removeClass('iphone-preview');
+	      div.css({
+	        zoom:1,
+	        position:'absolute',
+	        left:0,
+	        top:0
+	      });
+	      $('#ifm').contents().find('body').append(div);
+	      _this.hide();
+	      $('.loading').show();
+	      $('.my-image').hide();
+	      $('.mask').hide();
+	      html2canvas(div, {
+	          onrendered: function(canvas) {
+	            var myImage = canvas.toDataURL("image/png");  
+	            var pop_pic = $('.pop-pic');
+	            var pop_class = 'pc';
+	            if(browser.versions.mobile){
+	            	pop_class = 'mobile';
+	            }
+	            pop_pic.find('.tips').addClass(pop_class);
+	            pop_pic.find('img').attr('src',myImage);
+	            pop_pic.show();
+	            $('#wrapper').hide();
+	            $('.loading').hide();
+	            _this.show();
+
+	           /* $.ajax({  
+	              type : "POST",  
+	              url : '/File/uploadByData.html',  
+	              data : {data:'',type:image_type},  
+	              timeout : 60000
+	            });  */
+	            div.remove();
+	          }
+	      });
+	      return false;
+	    });
+	});
+</script> 
+ </body>
+</html>
